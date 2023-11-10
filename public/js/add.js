@@ -16,7 +16,7 @@ document.addEventListener('click', (e) => {
       }
       console.log(formValues);
 
-      fetch(`http://localhost:3000/api/movies`, {
+      fetch(`https://api-rest-test-dev-gxsp.1.us-1.fl0.io/api/movies`, {
          method: 'POST',
          headers: {
             'Content-Type': 'application/json'

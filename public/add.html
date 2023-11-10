@@ -1,0 +1,64 @@
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Test Movies API REST</title>
+   <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+   <header>
+
+      <h1>Add new movie</h1>
+   </header>
+   <section>
+
+      <form method="POST" id="form">
+
+         <div class="form-group">
+            <label for="title">Title</label>
+            <input spellcheck="false" type="text" name="title" id="title">
+            <small data-input-error></small>
+         </div>
+         <div class="form-group">
+            <label for="releaseYear">Release year</label>
+            <input spellcheck="false" type="number" min="1800" max="2024" name="releaseYear" id="releaseYear">
+            <small data-input-error></small>
+         </div>
+         <div class="form-group">
+            <label for="genre">Genre</label>
+            <select name="genre" id="genre">
+               <option selected value="" disabled>Select...</option>
+               <option value="drama">Drama</option>
+               <option value="action">Action</option>
+               <option value="science fiction">Science Siction</option>
+               <option value="adventure">Adventure</option>
+               <option value="crime">Crime</option>
+               <option value="another">Another</option>
+            </select>
+            <small data-input-error></small>
+         </div>
+         <div class="form-group">
+            <label for="director">Director</label>
+            <input spellcheck="false" type="text" name="director" id="director">
+            <small data-input-error></small>
+         </div>
+         <div class="form-group">
+            <label for="duration">Duration</label>
+            <input spellcheck="false" type="number" min="0" name="duration" id="duration">
+            <small data-input-error></small>
+         </div>
+         <div class="form-group">
+            <label for="rating">Rating (optional)</label>
+            <input spellcheck="false" min="0" max="10" type="number" name="rating" id="rating">
+            <small data-input-error></small>
+         </div>
+         <button data-add>Add Movie</button>
+      </form>
+   </section>
+
+   <script type="module" src="/js/add.js"></script>
+</body>
+
+</html>

@@ -1,5 +1,6 @@
 
 const inputs = document.querySelectorAll('input, textarea, select')
+const btn = document.querySelector('button')
 
 document.addEventListener('click', (e) => {
    if (e.target.matches('button[data-add]')) {
@@ -12,11 +13,12 @@ document.addEventListener('click', (e) => {
          genre: form.genre.value,
          director: form.director.value,
          duration: parseInt(form.duration.value) || 0,
-         rating: parseInt(form.rating.value) || 0,
+         rating: Number(parseFloat(form.rating.value).toFixed(2)) || 0,
       }
-      console.log(formValues);
+      btn.innerHTML = 'Loading...'
+      btn.disabled = true
 
-      fetch(`https://api-rest-test-dev-gxsp.1.us-1.fl0.io/api/movies`, {
+      fetch(`http://localhost:3000/api/movies`, {
          method: 'POST',
          headers: {
             'Content-Type': 'application/json'
@@ -40,6 +42,8 @@ document.addEventListener('click', (e) => {
                      inputError.textContent = message
                   }
                })
+               btn.innerHTML = 'Add'
+               btn.disabled = false
             } else {
                location.href = '/'
             }

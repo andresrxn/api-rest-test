@@ -18,7 +18,7 @@ const movieSchema = z.object({
    }),
    director: z.string().min(1, { message: 'Please add the director' }),
    duration: z.number().positive().min(1, { message: 'Please add the duration' }),
-   rating: z.number({ required_error: 'Please add de rate', invalid_type_error: 'Invalid rate' }).int().min(0).max(10).default(0)
+   rating: z.number().min(0).max(10).default(0)
 })
 
 export function validateMovie(obj) {

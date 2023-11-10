@@ -1,11 +1,11 @@
 
-await fetch('https://api-rest-test-dev-gxsp.1.us-1.fl0.io/api/movies')
+await fetch('http://localhost:3000/api/movies')
    .then(res => res.json())
    .then(data => {
       console.log(data.result);
       const content = data.movies.map(movie => {
          return `
-         <article data-id="${movie.id}">
+         <article data-id="${movie.id || movie._id}">
             <h2>${movie.title}</h2>
             <p><span>${movie.genre}</span> | <span>${movie.rating} Stars</span></p>
             <p><span>${movie.director}</span> | <span>${movie.releaseYear}</span> | <span>${movie.duration}min.</span></p>
@@ -29,7 +29,7 @@ document.addEventListener('click', (e) => {
       const deleteConfirm = confirm(`Delete ${article.querySelector('h2').textContent.trim()}?`)
       if (deleteConfirm) {
 
-         fetch(`https://api-rest-test-dev-gxsp.1.us-1.fl0.io/api/movies/${id}`, {
+         fetch(`http://localhost:3000/api/movies/${id}`, {
             method: 'DELETE'
          })
             .then(res => res.json())

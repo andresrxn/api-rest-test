@@ -1,5 +1,5 @@
 
-await fetch('http://localhost:3000/api/movies')
+await fetch('https://api-rest-test-dev-gxsp.1.us-1.fl0.io/api/movies')
    .then(res => res.json())
    .then(data => {
       console.log(data.result);

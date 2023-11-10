@@ -3,6 +3,7 @@ import cors from 'cors'
 const corsMD = ({ options } = {}) => cors({
    origin: (origin, callback) => {
       const ACCEPTED_ORIGINS = [
+         'https://api-rest-test-dev-gxsp.1.us-1.fl0.io',
          'http://localhost:3000',
          'http://localhost:3306',
          'http://localhost:8080',

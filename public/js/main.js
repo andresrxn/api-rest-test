@@ -29,7 +29,7 @@ document.addEventListener('click', (e) => {
       const deleteConfirm = confirm(`Delete ${article.querySelector('h2').textContent.trim()}?`)
       if (deleteConfirm) {
 
-         fetch(`http://localhost:3000/api/movies/${id}`, {
+         fetch(`https://api-rest-test-dev-gxsp.1.us-1.fl0.io/api/movies/${id}`, {
             method: 'DELETE'
          })
             .then(res => res.json())
